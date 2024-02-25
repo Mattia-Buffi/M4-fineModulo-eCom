@@ -1,0 +1,39 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: azure;
+}
+/* My class */
+#mainContainer{
+    min-height: 60vh;
+}
+
+/* TABELLA ADMIN */
+.imgTable{
+    width: 50px;
+    height: 50px;
+}
+
+/* PAGINA PRODOTTO*/
+.imgSingleProd{
+    width: 500px;
+    background-color: #6da5c0;
+}
+
+/* CARRELLO */
+.imgCart{
+    height:40px;
+    width: 40px;
+}
+
+/* Boostrap overwrite*/
+div.card-img-overlay{
+    opacity: 0;
+    background-color: rgba(89, 89, 89, 0.50);
+}
+div.card-img-overlay:hover{
+    opacity: 1;
+}

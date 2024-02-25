@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>eCom</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- navbar principale -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">Navbar w/ text</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarText">
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-text">
+                <div id="cartIcon" class="d-inline">
+                    <button class="btn btn-primary position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartRight" aria-controls="cartRight">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartInObj" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-primary">
+                            <!-- caricare con js n prodotti -->
+                            <span class="visually-hidden">n object in the cart</span>
+                        </span>
+                    </button>
+                </div>
+                <div class="dropdown d-inline">
+                    <button class="btn dropdown-toggle p-1 ms-2" type="button" id="profileMenu" data-bs-toggle="dropdown" aria-expanded="false">
+                        <div class="d-inline p-2 rounded-circle bg-primary text-white">
+                            <!-- possibilita di caricare link a foto -->
+                            <i class="fa-solid fa-user"></i>
+                        </div>
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="profileMenu">
+                        <li><span id="nameUser" class="dropdown-item">Name</span></li>
+                        <li><a class="dropdown-item" href="admin.html">Seller Profile</a></li>
+                        <li><a class="dropdown-item" href="#">LogOut</a></li>
+                    </ul>
+                </div>
+            </div>
+    </div>
+    </nav>
+    <!-- carrello -->
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="cartRight" aria-labelledby="offcanvasRightLabel">
+    <div class="offcanvas-header">
+    <h5 id="cartRightLabel">Your Cart</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <table class="table">
+            <tbody id="cartTabBody">
+                <!-- contenuto del carrello con js -->
+            </tbody>
+            <tfoot>
+               <tr>
+                  <th scope="total">TOT</th>
+                  <th scope="price">
+                    <span id="cartPrice">00,00</span>
+                  </th>
+                </tr>
+            </tfoot>
+        </table>
+        <button type="button" id="btnPayout" class="btn btn-primary">PAYOUT</button>
+        <button type="button" id="btnCartDelet" class="btn btn-primary">RESET</button>
+    </div>
+    </div>
+    <!-- main product -->
+    <div id="mainContainer" class="container">
+        <div id="mainRow" class="row">
+            <!-- spinner per caricamento -->
+            <div id="loadSpin" class="text-center mt-3 d-none">
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+                <div class="spinner-grow text-secondary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div id="imgBox" class="col-6">
+                <!-- immagine -->
+                imagine
+            </div>
+            <div class="col-6 d-flex align-items-center">
+                <div class="row g-4">
+                    <div id="nameBox" class="col-6">
+                        NOME
+                    </div>
+                    <div id="brandBox" class="col-6">
+                        BRNAD
+                    </div>
+                    <div id="priceBox" class="col-12">
+                        PRICE
+                    </div>
+                    <div id="descBox" class="col-12">
+                        DESCRIZIONE
+                    </div>
+                    <div id="btnBox" clasS="col-12"></div>
+                    <!-- inserimento con js -->
+                    <button id="cartBtn" class="btn btn-primary">AGGIUNGI AL CARRELLO</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- footer -->
+    <div id="footer">
+        <div class="contain bg-success mt-3">
+            <div class="row p-3">
+                <div class="col-4 text-center">logo</div>
+                <div class="col-4 text-center">dati</div>
+                <div class="col-4 text-center">contatti</div>
+            </div>
+        </div>
+    </div>
+    <!-- Integrazione script -->
+    <script src="https://kit.fontawesome.com/e5a2b2fa25.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="scriptProduct.js"></script>
+</body>
+</html>
