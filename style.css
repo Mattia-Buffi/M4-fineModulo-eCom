@@ -4,7 +4,10 @@
     box-sizing: border-box;
 }
 body{
-    background-color: azure;
+    background-color:#0f969c;
+}
+div#footer{
+    background-color:#0c7075;
 }
 /* My class */
 #mainContainer{
@@ -30,10 +33,25 @@ body{
 }
 
 /* Boostrap overwrite*/
+nav{
+    background-color: #6da5c0;
+}
+nav a, a.nav-link{
+    color:#294d61;
+}
+
 div.card-img-overlay{
     opacity: 0;
     background-color: rgba(89, 89, 89, 0.50);
 }
 div.card-img-overlay:hover{
     opacity: 1;
+}
+.alert{
+    position:fixed;
+    bottom:0px;
+    right:0px;
+    height:100px;
+    width:200px;
+    margin:20px;
 }

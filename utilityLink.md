@@ -63,15 +63,7 @@ headers: {
  fissare user e carrello all'interno dell hamburger menu
  array carrello da slavare in localStorage ed bagse sull'icona
  alert modifia o cancellazione
- pagina podotto con passaggio dati
  correzione immagini nella vetrina
  inserimento elemnti navbar
  footer 
  ordinamento degli elementi per prezzo o data inserimento o brand
-
-    "name": "nome prodotto"        
-    "description": "descrizione"   
-    "brand" : "marc"               
-    "imageUrl" : "htt link img"    
-    "price" : "prezzo"             
-    "userId" : "admin"  

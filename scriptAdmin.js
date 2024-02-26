@@ -7,10 +7,15 @@ const loadSpin=document.getElementById('loadSpin');
 //Row prodotti
 const tableRow=document.getElementById('tableRow');
 
+//Traccio alert
+let alertOk=document.querySelector('div.alert-success');
+let alertEr=document.querySelector('div.alert-danger');
+
 //Caricamento dati iniziale
 window.onload= ()=>{
     //verifica pagina caricata
     getProduct();
+
 }
 //richiesta dati fetch per lista aggiornata
 async function getProduct(){
@@ -28,6 +33,10 @@ async function getProduct(){
     }catch(error){
         console.log('Error fetch: ',error);
         loadSpin.classList.toggle('d-none');
+        alertEr.classList.toggle('d-none');
+        setTimeout(() => {
+            alertEr.classList.toggle("d-none");
+        }, 3000);
     }
 }
 //creazione della riga in tabellla con pulsanti
@@ -108,6 +117,7 @@ function loadModal(name,brand,description,imageUrl,price,id){
         modalUrlImg.value=imageUrl;
         let modifierBtn=document.createElement('button');
         modifierBtn.classList.add('btn','btn-primary');
+        modifierBtn.type='submit';
         modifierBtn.innerText='MODIFICA';
         modifierBtn.setAttribute('data-bs-dismiss','modal');
         btnEvent.innerHTML='';
@@ -126,8 +136,16 @@ async function pushRecord(methodCall,id){
             const res= await fetch(prodAPI,{method:methodCall,body:JSON.stringify(objRecord),headers:{"Authorization":idAPI,"content-type":"application/JSON"}});
         }
         getProduct();
+        alertOk.classList.toggle('d-none');
+        setTimeout(() => {
+            alertOk.classList.toggle("d-none");
+        }, 3000);
     } catch(err){
         console.log('Find error:', err);
+        alertEr.classList.toggle('d-none');
+        setTimeout(() => {
+            alertEr.classList.toggle("d-none");
+        }, 3000);
     }
 
 }
@@ -136,7 +154,15 @@ async function deleteRecord(id){
     try{
         await fetch(prodAPI+id,{method:"DELETE",headers:{"Authorization":idAPI}});
         getProduct();
+        alertOk.classList.toggle('d-none');
+        setTimeout(() => {
+            alertOk.classList.toggle("d-none");
+        }, 3000);
     } catch(err){
         console.log('Find error:', err);
+        alertEr.classList.toggle('d-none');
+        setTimeout(() => {
+            alertEr.classList.toggle("d-none");
+        }, 3000);
     }
 }

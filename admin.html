@@ -9,9 +9,9 @@
 </head>
 <body>
     <!-- navbar principale -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg">
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">Navbar w/ text</a>
+          <a class="navbar-brand" href="#">NFT Marketplace</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -29,6 +29,14 @@
                 </ul>
             </div>
             <div class="navbar-text">
+                <div id="cartIcon" class="d-inline d-none">
+                    <button class="btn btn-primary position-relative" type="button" data-bs-toggle="offcanvas" data-bs-target="#cartRight" aria-controls="cartRight">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span id="cartInObj" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-light text-primary">
+                            <span class="visually-hidden">n object in the cart</span>
+                        </span>
+                    </button>
+                </div>
                 <div class="dropdown d-inline">
                     <button class="btn dropdown-toggle p-1 ms-2" type="button" id="profileMenu" data-bs-toggle="dropdown" aria-expanded="false">
                         <div class="d-inline p-2 rounded-circle bg-primary text-white">
@@ -38,7 +46,7 @@
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end mt-3" aria-labelledby="profileMenu">
                         <li><span id="nameUser" class="dropdown-item">Name</span></li>
-                        <li><a class="dropdown-item" href="index.html">Home page</a></li>
+                        <li><a class="dropdown-item" href="admin.html">Seller Profile</a></li>
                         <li><a class="dropdown-item" href="#">LogOut</a></li>
                     </ul>
                 </div>
@@ -156,24 +164,14 @@
             </div>
         </form>
     </div>
-    <!-- alert per avvenuta comunicazione -->
-    <div id="alertRight" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex alert alert-success">
-          <div class="toast-body">
-          Hello, world! This is a toast message.
-         </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
     <!-- alert per errore comunicazione -->
-    <div id="alertWrong" class="toast align-items-center" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-          Hello, world! This is a toast message.
-         </div>
-          <button type="button" class="btn-close me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
+    <div class="alert alert-danger d-none" role="alert">
+        ERROR - Upload with error!
     </div>
+    <!-- alert per avvenuta comunicazione -->
+      <div class="alert alert-success d-none" role="alert">
+        SUCCESS - Upload correct!
+      </div>
     <!-- footer -->
     <div id="footer">
         <div class="contain bg-success mt-3">

@@ -64,7 +64,7 @@ function createCard({_id,name,imageUrl,price}){
     nameProd.innerText=name;
     let descProd=document.createElement('p');
     descProd.classList.add('card-text');
-    descProd.innerText=price;
+    descProd.innerText="$ "+price;
     // let btnAddCart=document.createElement('button');
     // btnAddCart.classList.add('btn','btn-primary','rounded-circle','text-center');
     // btnAddCart.innerHTML=`<i class="fas fa-cart-plus"></i>`;
